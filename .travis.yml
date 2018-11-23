@@ -4,13 +4,10 @@ node_js:
 
 script: echo "I really should add tests or something here."
 
-jobs:
-  include:
-  - stage: npm release
-    node_js: "7"
-    script: npm version patch
-    if: branch = master
-    deploy:
-      provider: npm
-      api_key: $NPM_API_KEY
-      on: deploy-npm-release
+before_deploy:
+- npm version patch
+deploy:
+  provider: releases
+  skip_cleanup: true
+  on:
+    branch: master
