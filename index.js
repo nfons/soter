@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 const program = require('commander');
+const fs = require("fs");
+
+var jsonContent = JSON.parse(fs.readFileSync("package.json"));
 program.option('--reporter, -r', 'Reporter to use, Defaults: New Relic', /^(newrelic|grafana)$/i, 'newrelic')
     .option('--terminate, -t', 'Terminate on medium or higher')
-    .version('0.5.1', '-v, --version');
+    .version(jsonContent.version, '-v, --version');
 program.parse(process.argv);
 const event = require('./EventHelpers/eventHelper');
 var spawn = require('child_process').spawnSync;
