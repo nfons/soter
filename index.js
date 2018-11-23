@@ -1,9 +1,15 @@
 #!/usr/bin/env node
+const program = require('commander');
+program.option('--reporter, -r', 'Reporter to use, Defaults: New Relic', /^(newrelic|grafana)$/i, 'newrelic')
+    .option('--terminate, -t', 'Terminate on medium or higher')
+    .version('0.5.1', '-v, --version');
+program.parse(process.argv);
 const event = require('./EventHelpers/eventHelper');
-
 var spawn = require('child_process').spawnSync;
 var child = spawn('npm' , ['audit','--json']);
 let json = JSON.parse(child.stdout);
+
+
 
 Object.keys(json.advisories).forEach(function (key) {
     let adv = json.advisories;

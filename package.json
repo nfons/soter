@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/nfons/soter#readme",
   "dependencies": {
+    "commander": "^2.19.0",
     "newrelic": "^4.11.0"
   }
 }
