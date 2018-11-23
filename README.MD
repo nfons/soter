@@ -1,4 +1,7 @@
-# Soter ![build status](https://travis-ci.org/nfons/soter.svg?branch=master)
+# Soter
+ ![build status](https://travis-ci.org/nfons/soter.svg?branch=master) 
+ [![NPM Version](http://img.shields.io/npm/v/soter.svg?style=flat)](https://www.npmjs.org/package/soter) 
+ 
 Node Tool To Run Security Auditing and set alerts on possible vulnerabilities
 
 # WHY
