@@ -1,4 +1,4 @@
-# Soter
+# Soter ![build status](https://travis-ci.org/nfons/soter.svg?branch=master)
 Node Tool To Run Security Auditing and set alerts on possible vulnerabilities
 
 # WHY
