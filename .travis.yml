@@ -8,7 +8,7 @@ jobs:
   include:
   - stage: npm release
     node_js: "7"
-    script: echo "Deploying to npm ..."
+    script: npm version patch
     if: branch = master
     deploy:
       provider: npm
