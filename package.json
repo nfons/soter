@@ -1,6 +1,6 @@
 {
   "name": "soter",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Runs npm audit and logs the items as new relic custom events",
   "main": "index.js",
   "scripts": {
