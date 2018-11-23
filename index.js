@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const event = require('./EventHelpers/eventHelper');
 
 var spawn = require('child_process').spawnSync;

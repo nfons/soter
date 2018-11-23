@@ -1,4 +1,4 @@
-const reporter = process.env.REPORTER;
+const reporter = process.env.SOTER_REPORTER;
 let eventHelper;
 switch (reporter) {
     default:
