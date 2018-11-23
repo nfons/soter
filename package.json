@@ -1,0 +1,28 @@
+{
+  "name": "soter",
+  "version": "0.5.0",
+  "description": "Runs npm audit and logs the items as new relic custom events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfons/soter.git"
+  },
+  "keywords": [
+    "New",
+    "Relic",
+    "Custom",
+    "Events"
+  ],
+  "author": "Nate Fonseka",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/nfons/soter/issues"
+  },
+  "homepage": "https://github.com/nfons/soter#readme",
+  "dependencies": {
+    "newrelic": "^4.11.0"
+  }
+}
