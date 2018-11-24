@@ -1,13 +1,18 @@
 language: node_js
 node_js:
-- "7"
+- "8"
 
 script: echo "I really should add tests or something here."
 
-before_deploy:
-- npm version patch
-deploy:
-  provider: releases
-  skip_cleanup: true
-  on:
-    branch: master
+jobs:
+  include:
+    - script: npm audit
+    - stage: npm release
+      script: npm version patch
+      deploy:
+        provider: npm
+        api_key: $NPM_API_KEY
+        skip_cleanup: true
+        on:
+          branch: master
+
