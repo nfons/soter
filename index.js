@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+//reset new relic stuff
+process.env.NEW_RELIC_NO_CONFIG_FILE = true;
+var colors = require('colors/safe');
+require('colors');
 const program = require('commander');
 const fs = require("fs");
 
@@ -13,6 +17,16 @@ var child = spawn('npm' , ['audit','--json']);
 let json = JSON.parse(child.stdout);
 
 
+function colorSev(sev) {
+    switch(sev){
+        case 'high':
+            return colors.red(sev);
+        case 'moderate':
+            return colors.yellow(sev);
+        default:
+            return colors.green(sev)
+    }
+}
 
 Object.keys(json.advisories).forEach(function (key) {
     let adv = json.advisories;
@@ -23,6 +37,7 @@ Object.keys(json.advisories).forEach(function (key) {
     let recommendation = adv[key].recommendation;
 
     event(title, severity, cves, overview, recommendation);
+    console.log("Vulnerability found: ".red + title, " [Severity] ".cyan + colorSev(severity))
 });
 
 (Object.keys(json.advisories).length  === 0) ? console.log("No Vulnerabilities found") : console.log("Vulnerabilities logged");
